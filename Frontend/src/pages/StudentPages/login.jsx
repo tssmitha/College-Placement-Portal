@@ -10,6 +10,7 @@ import {
   FormControlLabel,
   IconButton,
   InputAdornment,
+  Link
 } from "@mui/material";
 import { Email, Lock, Visibility, VisibilityOff } from "@mui/icons-material";
 import GoogleIcon from "@mui/icons-material/Google"; // Using Material UI Icons
@@ -40,6 +41,10 @@ const Login = () => {
     } catch (error) {
       console.error(error.response?.data?.message || "Login failed");
     }
+  };
+
+  const handleForgotPassword = () => {
+    navigate('/forgot-password');  // Redirect to Forgot Password page
   };
   
 
@@ -103,7 +108,7 @@ const Login = () => {
           {/* Remember Me and Forgot Password */}
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "10px" }}>
             <FormControlLabel control={<Checkbox />} label="Remember Me" />
-            <Button sx={{ textTransform: "none", color: "#1976d2" }}>Forgot Password?</Button>
+            <Button sx={{ textTransform: "none", color: "#1976d2" }} onClick={handleForgotPassword}>Forgot Password?</Button>
           </div>
 
           {/* Login Button */}

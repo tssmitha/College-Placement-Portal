@@ -84,9 +84,17 @@ const features = [
   { title: "Ongoing Placements", description: "Track ongoing placement processes", icon: <BusinessCenterIcon fontSize="large" color="primary" /> },
   { title: "Resume ATS", description: "Check your resume score and optimize it", icon: <DescriptionIcon fontSize="large" color="primary" />, route: "/ats-score" },
   { title: "Mock Interview", description: "AI-powered mock interviews for placements", icon: <SchoolIcon fontSize="large" color="primary" />, route : '/ai-interview' },
-  { title: "DSA Practice", description: "Prepare for DSA", icon: <MenuBookIcon fontSize="large" color="primary" /> },
+  { title: "DSA Practice", description: "Prepare for DSA", icon: <MenuBookIcon fontSize="large" color="primary" /> , route : '/dsa-tracker'},
   { title: "Resources", description: "Study materials and written Notes", icon: <MenuBookIcon fontSize="large" color="primary" />, route: "/resources" },
   { title: "Company Recommendations", description: "Click on to view similar companies", icon: <BusinessCenterIcon fontSize="large" color="primary" />, route: "/company-recommendations" },
+  // {titele : "Alumini Connect" , description : "connect with alumini", {fontsize : "large" , color : "primary"} , route : "/alumini-connect"},
+  {
+    title: "Alumni Connect",
+    description: "Connect with alumni",
+    icon: <SchoolIcon fontSize="large" color="primary" />,
+    route: "/alumini-connect"
+  }
+  
 ];
 
 const DashboardCards = () => {

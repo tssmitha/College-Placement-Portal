@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shortlist Notification</title>
+</head>
+<body>
+  <h2>Congratulations, {{name}}!</h2>
+  <p>We are pleased to inform you that you have been shortlisted for the following round:</p>
+  <p><strong>Company:</strong> {{company}}</p>
+  <p><strong>Role:</strong> {{role}}</p>
+  <p><strong>Round:</strong> {{round}} ({{stage}})</p>
+  <p><strong>Date & Time:</strong> {{roundDateTime}}</p>
+
+  {{#if message}}
+    <p><em>{{message}}</em></p>
+  {{/if}}
+
+  <p>Best of luck with your next steps!</p>
+
+  <p>Regards,<br>The NIE Placement Cell</p>
+</body>
+</html>

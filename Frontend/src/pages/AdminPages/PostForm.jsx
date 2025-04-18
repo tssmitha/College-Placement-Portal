@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const StyledCard = styled(Card)({
   borderRadius: "16px",
@@ -42,6 +43,7 @@ export default function PostJobForm() {
 
   const [logoFile, setLogoFile] = useState(null);
   const [jdFile, setJdFile] = useState(null);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -93,6 +95,8 @@ for (let [key, value] of data.entries()) {
       }});
       console.log("Response:", res.data);
       alert("Job posted successfully!");
+      navigate("/admin-released-applications"); // Redirect to admin dashboard
+
     } catch (error) {
       console.error("Error posting job:", error);
       alert("Something went wrong!");

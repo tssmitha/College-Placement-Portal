@@ -51,6 +51,8 @@ router.get("/applications", authenticateUser, async (req, res) => {
 router.post('/apply/:jobId', authenticateUser, async (req, res) => {
     const jobId = req.params.jobId;
     const studentId = req.user._id; // Assuming you get it from middleware
+
+    console.log(jobId);
   
     try {
       // Check if already applied

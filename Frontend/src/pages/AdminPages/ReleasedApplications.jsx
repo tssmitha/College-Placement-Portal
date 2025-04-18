@@ -37,10 +37,10 @@ const ApplicationsPage = () => {
       try {
         const [activeRes, pastRes] = await Promise.all([
           axios.get('http://localhost:5001/api/admin/viewApplications/active', {
-            headers: { Authorization: `Bearer ${token}` }
+            headers: { Authorization: `Bearer ${token}`,withCredentials: true }
           }),
           axios.get('http://localhost:5001/api/admin/viewApplications/past', {
-            headers: { Authorization: `Bearer ${token}` }
+            headers: { Authorization: `Bearer ${token}` ,withCredentials : true}
           }),
         ]);
 
