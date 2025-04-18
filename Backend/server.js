@@ -24,11 +24,20 @@ app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 const loadRoutes = (dirPath, baseRoute) => {
   fs.readdirSync(dirPath).forEach((file) => {
     if (file.endsWith('.js')) {
-      const route = require(path.join(dirPath, file));
+      const fullPath = path.join(dirPath, file);
+      const route = require(fullPath);
+
+      if (typeof route !== 'function') {
+        console.error(`❌ Route file ${file} does not export a middleware function`);
+        return; // Skip it
+      }
+
+      console.log(`✅ Loaded route: ${baseRoute}/${file}`);
       app.use(baseRoute, route);
     }
   });
 };
+
 
 // Connect to MongoDB
 connectDB();
@@ -62,6 +71,7 @@ app.use("/verifiedStudents", verifiedStudent);
 app.use("/signup", signup);
 app.use("/companies", company);
 app.use("/api/test", require("./src/routes/AdminRoutes/emailTest"));
+// app.use("/release-shortlist", require("./src/routes/AdminRoutes/releaseShortlist"));
 // app.use("/sendJobDeadlineReminders", sendJobDeadlineReminders);
 // Start Server
 const PORT = process.env.PORT || 5001;

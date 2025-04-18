@@ -35,22 +35,24 @@ import {
         });
     }, [jobId]);
   
-    const handleApply = () => {
-      setIsApplying(true);
-      axios
-  .post(`http://localhost:5001/api/students/apply/${jobId}`, {}, { withCredentials: true })
-  .then(() => {
+  //   const handleApply = () => {
+  //     setIsApplying(true);
+  //     console.log(jobId);
+  //     axios
+  // .post(`http://localhost:5001/api/students/apply/${jobId}`, {}, { withCredentials: true })
+  // .then(() => {
+  //   navigate(`/apply/${jobId}`);
+
+  // })
+
+  const handleApply = () => {
+    setIsApplying(true);
     navigate(`/apply/${jobId}`);
-  })
-  .catch((err) => {
-    console.error('Failed to apply:', err);
-    alert('Application failed. Try again.');
-    setIsApplying(false);
-  });
+  }
+  
  
 
      
-    };
   
     const isDeadlineSoon = (dateStr) => {
       if (!dateStr) return false;

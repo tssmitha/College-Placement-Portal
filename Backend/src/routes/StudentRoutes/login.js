@@ -2,6 +2,7 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const Student = require("../../models/Student");
 const bcrypt = require("bcryptjs");
+const authMiddleware = require("../../middleware/authMiddleware");
 require("dotenv").config();
 
 const router = express.Router();
@@ -53,5 +54,6 @@ router.post("/login", async (req, res) => {
     console.log(error);
   }
 });
+
 
 module.exports = router;

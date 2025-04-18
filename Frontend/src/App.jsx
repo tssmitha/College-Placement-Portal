@@ -4,6 +4,9 @@ import { Provider } from "react-redux";
 import { store } from "./Redux/store";
 import Login from "./pages/StudentPages/login";
 import Signup from "./pages/StudentPages/sign-up"; // Ensure file name matches exactly
+import ForgotPassword from "./pages/StudentPages/ForgotPassword";
+import ChangePassword from "./pages/StudentPages/ChangePassword";
+import ResetPassword from "./pages/StudentPages/ResetPassword";
 import PersonalEmailPage from "./pages/StudentPages/PersonalEmailPage";
 import DashboardLayout from "./pages/StudentPages/layout";
 import StudentProfile from "./pages/StudentPages/StudentProfile";
@@ -30,8 +33,13 @@ import PlacedStudentsPage from "./pages/StudentPages/PlacedStudents";
 import Feedback from "./pages/StudentPages/Feedback";
 import CategoryResourcesPage from "./pages/StudentPages/ResourceCategory";
 import PlacementRulesPage from "./pages/StudentPages/PlacementRules";
+import LeetCodeProgress from "./pages/StudentPages/DSA";
+import OngoingPlacements from "./pages/StudentPages/OngoingPlacements";
 import TestApplicationHeader from "./pages/StudentPages/TestApplicationHeader";
 import TestProgress from "./pages/StudentPages/TestProgress";
+import AdminLogin from "./pages/AdminPages/AdminLogin";
+import ReleaseShortlist from "./pages/AdminPages/ReleaseShortlist";
+import Statistics from "./pages/AdminPages/Statistics";
 
 function App() {
   return (
@@ -40,6 +48,9 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/change-password" element={<ChangePassword />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
         <Route path="/personal-email" element={<PersonalEmailPage />} />
         <Route path="/dashboard" element={<DashboardLayout />} />
         <Route path="/profile" element={<StudentProfile />} />
@@ -60,15 +71,19 @@ function App() {
         <Route path="/companies/:companyId/placed-students" element={<PlacedStudentsPage />} />
         <Route path="/company-recommendations" element={<CompanyRecommendation />} />
         <Route path="/placement-rules" element={<PlacementRulesPage />} />
-
+        <Route path="/dsa-tracker" element={<LeetCodeProgress />} />
+        <Route path="/ongoing-placements" element={<OngoingPlacements />} />
         <Route path="/test" element={<TestApplicationHeader />} />
         <Route path="/test-progress" element={<TestProgress />} />
 
+        <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/admin-released-applications" element={<ApplicationsPage />} />
         <Route path="/admin/jobs/:jobId" element={<JobDetails />} />
         <Route path="/admin/release-forms" element={<PostForm />} />
         <Route path="/admin/upload-resources" element={<UploadResource />} />
+        <Route path="/admin/release-shortlist" element={<ReleaseShortlist />} />
+        <Route path="/statistics" element={<Statistics />} />
   
 
 

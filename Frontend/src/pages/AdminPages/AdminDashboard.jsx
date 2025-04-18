@@ -31,6 +31,7 @@ const actions = [
     buttonLabel: "POST APPLICATION",
     icon: <PostAddIcon color="info" fontSize="large" />,
     buttonColor: "primary",
+    navigateTo: "/admin/release-forms",
   },
   {
     title: "Upload Resources",
@@ -38,6 +39,7 @@ const actions = [
     buttonLabel: "UPLOAD",
     icon: <MenuBookIcon color="secondary" fontSize="large" />,
     buttonColor: "secondary",
+    navigateTo: "/admin/upload-resources",
   },
   {
     title: "Collect Interview Questions",
@@ -46,13 +48,14 @@ const actions = [
     icon: <UploadFileIcon color="warning" fontSize="large" />,
     buttonColor: "warning",
   },
-  {
-    title: "Placement Dashboard",
-    description: "Visualize 3-year stats and track live placement progress.",
-    buttonLabel: "VIEW DASHBOARD",
-    icon: <BarChartIcon sx={{ color: "#009688" }} fontSize="large" />,
-    buttonColor: "inherit",
-  },
+  // {
+  //   title: "Placement Dashboard",
+  //   description: "Visualize 3-year stats and track live placement progress.",
+  //   buttonLabel: "VIEW DASHBOARD",
+  //   icon: <BarChartIcon sx={{ color: "#009688" }} fontSize="large" />,
+  //   buttonColor: "inherit",
+  //   navigateTo : "/statistics",
+  // },
 ];
 
 export default function AdminDashboard() {
